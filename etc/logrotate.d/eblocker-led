@@ -1,0 +1,8 @@
+/opt/eblocker-led/log/eblocker-led.log {
+  copytruncate
+  compress
+  daily
+  missingok
+  notifempty
+  rotate 7
+}
