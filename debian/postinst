@@ -24,10 +24,10 @@ if [ "$1" = configure ] ; then
     chown  eblocker-led:eblocker-led /opt/eblocker-led/run
 
 # Install services:
-    update-rc.d eblocker-led defaults
+    systemctl enable eblocker-led
 
 # (Re)start services:
-    invoke-rc.d eblocker-led restart
+    systemctl restart eblocker-led
 
 fi
 

@@ -1,0 +1,18 @@
+[Unit]
+Description=eBlocker LED controller server
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=forking
+PIDFile=/opt/eblocker-led/run/eblocker-led.pid
+ExecStart=/opt/eblocker-led/bin/eblocker-led start
+ExecStartPre=+chgrp eblocker-led /dev/spidev0.0
+ExecStartPre=+chmod g+rw /dev/spidev0.0
+ExecStop=/opt/eblocker-led/bin/eblocker-led stop
+User=eblocker-led
+Group=eblocker-led
+WorkingDirectory=/opt/eblocker-led
+
+[Install]
+WantedBy=multi-user.target

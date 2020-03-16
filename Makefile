@@ -1,13 +1,13 @@
 LED_HOME = $(DESTDIR)/opt/eblocker-led
-INITD = $(DESTDIR)/etc/init.d
 LOGROTATED = $(DESTDIR)/etc/logrotate.d
+SYSTEMD = $(DESTDIR)/lib/systemd/system
 
 build:
 	bundle package --all
 
 install:
-	mkdir -p $(INITD)
-	cp etc/init.d/eblocker-led $(INITD)
+	mkdir -p $(SYSTEMD)
+	cp etc/systemd/eblocker-led.service $(SYSTEMD)
 	mkdir -p $(LOGROTATED)
 	cp etc/logrotate.d/eblocker-led $(LOGROTATED)
 	mkdir -p $(LED_HOME)
