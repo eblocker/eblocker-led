@@ -18,7 +18,7 @@
 
 if [ "$1" = remove ] ; then
 # Stop services:
-    invoke-rc.d eblocker-led stop
+    systemctl stop eblocker-led
 fi
 
 exit 0

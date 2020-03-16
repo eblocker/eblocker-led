@@ -19,5 +19,5 @@
 if [ "$1" = remove ] ; then
 echo remove
 # Remove services
-    update-rc.d eblocker-led remove
+    systemctl disable eblocker-led
 fi
